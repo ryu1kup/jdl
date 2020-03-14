@@ -1,0 +1,12 @@
+# set your midway/dali account
+_USER=username
+
+# full path to the original jupyter command
+# you can find it with "which jupyter"
+_JUPYTER_ORIGIN=/path/to/jupyter
+
+# full path to the jupyter launcher script
+_JUPYTER_LAUNCHER=/path/to/<start_jupyter>.py
+
+# If you want to some ssh flags use this variable as a string
+#_SSH_FLAGS="-i ~/.ssh/id_rsa"

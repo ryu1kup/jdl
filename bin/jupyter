@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#
+# a simple wrapper to launch jupyter lab in dali
+#
+
+# load config
+source jdl_config.sh
+
+if [ ${1} = "dali" ]; then
+    ssh ${_SSH_FLAGS} ${_USER}@dali-login1.rcc.uchicago.edu ${_JUPYTER_LAUNCHER}
+else
+    ${_JUPYTER_ORIGIN} ${@}
+fi
