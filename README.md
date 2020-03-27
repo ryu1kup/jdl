@@ -9,7 +9,7 @@ And then, add the following line in your `.bash_profile`
 ```
 export PATH=/path/to/jdl/bin:$PATH
 ```
-Then you can start jupyter lab in dali via ssh connection with the command
+Now you can start jupyter lab in dali via ssh connection with the command
 ```
 $ jupyter dali
 ```
