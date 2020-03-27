@@ -5,10 +5,21 @@
 #
 
 # load config
+cd $(dirname $0)
 source jdl_config.sh
 
+if [ `echo $(uname -s) | grep '*Linux*'` ]; then
+    OS='Linux'
+elif [ `echo $(uname -s) | grep 'CYGWIN_NT'` ]; then
+    OS='Cygwin'
+else
+    echo $(uname -s)
+    echo "Your platform ($(uname -a)) is not supported."
+    exit 1
+fi
+
 if [ ${1} = "dali" ]; then
-    ssh ${_SSH_FLAGS} ${_USER}@dali-login1.rcc.uchicago.edu ${_JUPYTER_LAUNCHER}
+    python3 jupyter.py ${_SSH_FLAGS} ${_USER} ${_JUPYTER_LAUNCHER} ${OS}
 else
     ${_JUPYTER_ORIGIN} ${@}
 fi
